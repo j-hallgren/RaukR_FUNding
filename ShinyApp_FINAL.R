@@ -17,29 +17,40 @@
 
 
 
-###### Load in the necessary raw data: ######
+###### Uncomment and load in the necessary raw data the first time you run the application: ######
 
 ###===
 ### TO LOAD RAW DATA FROM FILES, UNCOMMENT THE FOLLOWING CODE:
 ###===
 
+# #===
+# all_university_projects <- read_csv("all_university_projects.csv")
+# scbs.codes <- read_csv2("scbs_codes_projID.csv")
+# load("wordcloud_categories_count.RData")
+# parsed_people <- read_csv2("involved_people_projID.csv")
+# #===
+
+### ### Which correspond to the following:
 ### Main dataset
 ### SCBS codes dataset
 ### Mikael's abstract word counts
 ### People dataset
 
-all_university_projects <- read_csv("all_university_projects.csv")
-scbs.codes <- read_csv2("scbs_codes_projID.csv")
-load("wordcloud_categories_count.RData")
-parsed_people <- read_csv2("involved_people_projID.csv")
 
 ###### END ######
 
 
 
-###### Pre-calculate this ######
-### Generation of frequencies of people being part of projects
-# Added 2023-06-21 16:15
+###### Uncomment and precalculate the following data the first time you run the application: ######
+
+
+###===
+### TO GENERATE NECESSARY DATA, UNCOMMENT AND RUN THE FOLLOWING CODE:
+###===
+
+# #===
+# ### Generation of frequencies of people being part of projects
+# # Added 2023-06-21 16:15
 # # Generation of funding by gender dataset, From Evelyn 2023-06-21 09:26
 # all_university_projects_people <- merge(all_university_projects, parsed_people, by="ProjectId")
 # all_university_projects_people <- all_university_projects_people[all_university_projects_people$FundingYear %in% c("2020","2021","2022","2023"), ]
@@ -73,6 +84,8 @@ parsed_people <- read_csv2("involved_people_projID.csv")
 # 
 # top_10_name <- head(project_counts_name_df_sort, 10)
 # top_10_name$fullName <- factor(top_10_name$fullName, levels = top_10_name$fullName)
+# #===
+
 ###### END ######
 
 
